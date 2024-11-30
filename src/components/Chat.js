@@ -16,16 +16,30 @@ function Chat() {
   const handleSend = async () => {
     if (input.trim() === '') return;
 
+    // Añadir el nuevo mensaje del usuario al estado
     const newMessages = [...messages, { text: input, sender: 'user' }];
     setMessages(newMessages);
     setInput('');
 
     try {
+      // Preparar los mensajes para enviarlos a la API
+      const formattedMessages = [
+        {
+          role: 'system',
+          content:
+            'Eres Savida, un coach personal basado en inteligencia artificial que ayuda a los usuarios a mejorar su vida diaria y laboral. Tu función principal es brindar consejos prácticos, soluciones rápidas y guías claras en las áreas de productividad, bienestar, comunicación, finanzas personales y metas personales. Responde siempre de manera amigable, motivadora y directa. Utiliza un enfoque estructurado que incluya un consejo, una acción concreta y una referencia a un experto o técnica reconocida.',
+        },
+        ...newMessages.map((msg) => ({
+          role: msg.sender === 'user' ? 'user' : 'assistant',
+          content: msg.text,
+        })),
+      ];
+
       const response = await axios.post(
         process.env.REACT_APP_API_URL,
         {
-          model: 'gpt-4',
-          messages: [{ role: 'user', content: input }],
+          model: 'gpt-3.5-turbo',
+          messages: formattedMessages,
         },
         {
           headers: {
