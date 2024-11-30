@@ -1,3 +1,17 @@
+# Node modules
 /node_modules
-/.env
+
+# Variables de entorno
+.env
+
+# Build outputs
 /build
+
+# Dependencias de paquetes
+package-lock.json
+yarn.lock
+
+# Archivos de log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

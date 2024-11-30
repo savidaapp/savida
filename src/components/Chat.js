@@ -1,3 +1,5 @@
+// src/components/Chat.js
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import Message from './Message';
@@ -20,7 +22,7 @@ function Chat() {
 
     try {
       const response = await axios.post(
-        'https://api.openai.com/v1/chat/completions',
+        process.env.REACT_APP_API_URL,
         {
           model: 'gpt-4',
           messages: [{ role: 'user', content: input }],

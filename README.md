@@ -10,7 +10,7 @@ Savida es una aplicación web que actúa como un coach personal basado en inteli
 
 ## Configuración del Proyecto
 
-1. Clona este repositorio:
+1. Clona este repositorioo:
 
    ```bash
    git clone https://github.com/tu-usuario/savida.git
