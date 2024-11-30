@@ -1,6 +1,6 @@
 // src/components/Chat.js
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Message from './Message';
 
@@ -12,6 +12,19 @@ function Chat() {
     },
   ]);
   const [input, setInput] = useState('');
+
+  // Referencia al final de la lista de mensajes
+  const messagesEndRef = useRef(null);
+
+  // Función para hacer scroll al final
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  // Uso de useEffect para hacer scroll cuando cambian los mensajes
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   const handleSend = async () => {
     if (input.trim() === '') return;
@@ -69,6 +82,8 @@ function Chat() {
         {messages.map((msg, index) => (
           <Message key={index} text={msg.text} sender={msg.sender} />
         ))}
+        {/* Elemento invisible para hacer scroll */}
+        <div ref={messagesEndRef} />
       </div>
       <div className="input-area">
         <input
