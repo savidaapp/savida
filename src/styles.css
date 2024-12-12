@@ -31,16 +31,18 @@ h1 {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden; /* Eliminar scroll horizontal */
 }
 
 .message {
   margin-bottom: 10px;
-  width: 100%;
+  max-width: 100%; /* Asegurar que los mensajes no excedan el ancho de la caja */
   padding: 15px;
   font-size: 16px;
   position: relative;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word; /* Forzar el ajuste del texto dentro del contenedor */
 }
 
 .message.user {
