@@ -1,4 +1,4 @@
-// Mejoras en Chat.js
+// Mejoras enw Chat.js
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Message from './Message';
