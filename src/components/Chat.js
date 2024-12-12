@@ -1,4 +1,4 @@
-// Mejoras enw Chat.js
+// Mejoras en Chat.js
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Message from './Message';
@@ -80,8 +80,8 @@ function Chat() {
           <div
             key={index}
             className={`message ${msg.sender}`}
-            data-sender={msg.sender === 'user' ? 'Tú' : 'Savida'}
           >
+            <div className="sender-label">{msg.sender === 'user' ? 'Tú' : 'Savida'}</div>
             <ReactMarkdown>{msg.text}</ReactMarkdown>
           </div>
         ))}

@@ -1,4 +1,4 @@
-/* Mejoras en swtyles.css */
+/* Mejoras en styles.css */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -36,9 +36,11 @@ h1 {
 .message {
   margin-bottom: 10px;
   width: 100%;
-  padding: 10px 20px;
+  padding: 15px;
   font-size: 16px;
   position: relative;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .message.user {
@@ -47,26 +49,15 @@ h1 {
   text-align: right;
 }
 
-.message.user::before {
-  content: "Tú:";
-  font-weight: bold;
-  position: absolute;
-  top: -20px;
-  right: 10px;
-}
-
 .message.bot {
   background-color: #f1f0f0;
   color: #555;
   text-align: left;
 }
 
-.message.bot::before {
-  content: "Savida:";
+.sender-label {
   font-weight: bold;
-  position: absolute;
-  top: -20px;
-  left: 10px;
+  margin-bottom: 5px;
 }
 
 .input-area {
@@ -100,5 +91,9 @@ h1 {
   .chat-container {
     height: 100vh;
     border-radius: 0;
+  }
+  .message {
+    padding: 10px;
+    font-size: 14px;
   }
 }
