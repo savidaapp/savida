@@ -37,18 +37,36 @@ h1 {
   margin-bottom: 10px;
   width: 100%;
   padding: 10px 20px;
-  text-align: right;
   font-size: 16px;
+  position: relative;
 }
 
 .message.user {
   background-color: #e8f4e5;
   color: #333;
+  text-align: right;
+}
+
+.message.user::before {
+  content: "Tú:";
+  font-weight: bold;
+  position: absolute;
+  top: -20px;
+  right: 10px;
 }
 
 .message.bot {
   background-color: #f1f0f0;
   color: #555;
+  text-align: left;
+}
+
+.message.bot::before {
+  content: "Savida:";
+  font-weight: bold;
+  position: absolute;
+  top: -20px;
+  left: 10px;
 }
 
 .input-area {

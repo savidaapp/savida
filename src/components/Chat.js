@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Message from './Message';
+import ReactMarkdown from 'react-markdown';
 
 function Chat() {
   const [messages, setMessages] = useState([
@@ -21,17 +22,6 @@ function Chat() {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
-
-  const formatText = (text) => {
-    // Permitir formatos básicos: negritas, viñetas, y numeración
-    const formattedText = text
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\n- /g, '<li>')
-      .replace(/\n\d+\. /g, '<li>')
-      .replace(/\n/g, '<br>');
-
-    return formattedText;
-  };
 
   const handleSend = async () => {
     if (input.trim() === '') return;
@@ -87,11 +77,13 @@ function Chat() {
     <div className="chat-container">
       <div className="messages">
         {messages.map((msg, index) => (
-          <Message
+          <div
             key={index}
-            text={formatText(msg.text)}
-            sender={msg.sender}
-          />
+            className={`message ${msg.sender}`}
+            data-sender={msg.sender === 'user' ? 'Tú' : 'Savida'}
+          >
+            <ReactMarkdown>{msg.text}</ReactMarkdown>
+          </div>
         ))}
         <div ref={messagesEndRef} />
       </div>
