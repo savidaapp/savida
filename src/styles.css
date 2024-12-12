@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* Mejoras en styles.css */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,7 +16,7 @@ h1 {
 
 .chat-container {
   max-width: 600px;
-  height: 80vh; /* Añadido: establece una altura para el contenedor */
+  height: 80vh;
   margin: 20px auto;
   background-color: #fff;
   border-radius: 8px;
@@ -84,4 +84,11 @@ h1 {
 
 .input-area button:hover {
   background-color: #357abd;
+}
+
+@media (max-width: 600px) {
+  .chat-container {
+    height: 100vh;
+    border-radius: 0;
+  }
 }

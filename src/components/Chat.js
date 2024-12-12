@@ -1,5 +1,4 @@
-// src/components/Chat.js
-
+// Mejoras en Chat.js
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Message from './Message';
@@ -13,34 +12,40 @@ function Chat() {
   ]);
   const [input, setInput] = useState('');
 
-  // Referencia al final de la lista de mensajes
   const messagesEndRef = useRef(null);
 
-  // Función para hacer scroll al final
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Uso de useEffect para hacer scroll cuando cambian los mensajes
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
 
+  const formatText = (text) => {
+    // Permitir formatos básicos: negritas, viñetas, y numeración
+    const formattedText = text
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\n- /g, '<li>')
+      .replace(/\n\d+\. /g, '<li>')
+      .replace(/\n/g, '<br>');
+
+    return formattedText;
+  };
+
   const handleSend = async () => {
     if (input.trim() === '') return;
 
-    // Añadir el nuevo mensaje del usuario al estado
     const newMessages = [...messages, { text: input, sender: 'user' }];
     setMessages(newMessages);
     setInput('');
 
     try {
-      // Preparar los mensajes para enviarlos a la API
       const formattedMessages = [
         {
           role: 'system',
           content:
-            'Eres Savida, un coach personal basado en inteligencia artificial que ayuda a los usuarios a mejorar su vida diaria y laboral. Tu función principal es brindar consejos prácticos, soluciones rápidas y guías claras en las áreas de productividad, bienestar, comunicación, finanzas personales y metas personales. Responde siempre de manera amigable, motivadora y directa. Utiliza un enfoque estructurado que incluya un consejo, una acción concreta y una referencia a un experto o técnica reconocida.',
+            'Eres Savida, un coach personal basado en inteligencia artificial que ayuda a los usuarios a mejorar su vida diaria y laboral. Responde siempre de manera amigable, motivadora y estructurada.',
         },
         ...newMessages.map((msg) => ({
           role: msg.sender === 'user' ? 'user' : 'assistant',
@@ -73,6 +78,8 @@ function Chat() {
           sender: 'bot',
         },
       ]);
+    } finally {
+      scrollToBottom(); // Asegurar el auto scroll siempre después de enviar
     }
   };
 
@@ -80,9 +87,12 @@ function Chat() {
     <div className="chat-container">
       <div className="messages">
         {messages.map((msg, index) => (
-          <Message key={index} text={msg.text} sender={msg.sender} />
+          <Message
+            key={index}
+            text={formatText(msg.text)}
+            sender={msg.sender}
+          />
         ))}
-        {/* Elemento invisible para hacer scroll */}
         <div ref={messagesEndRef} />
       </div>
       <div className="input-area">
@@ -91,7 +101,7 @@ function Chat() {
           placeholder="Escribe tu mensaje..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          onKeyPress={(e) => (e.key === 'Enter' ? handleSend() : null)}
+          onKeyDown={(e) => (e.key === 'Enter' ? handleSend() : null)}
         />
         <button onClick={handleSend}>Enviar</button>
       </div>
