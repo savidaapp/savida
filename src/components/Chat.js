@@ -5,19 +5,17 @@ import Message from './Message';
 function Chat() {
   const [messages, setMessages] = useState([
     {
-      text: '¡Hola! Soy Savida, tu coach personal. ¿En qué área te gustaría mejorar hoy?',
+      text: '¡Hola! Soy **Savida**, tu coach personal. ¿En qué área te gustaría mejorar hoy?\n\n1. Salud\n2. Productividad\n3. Relación laboral',
       sender: 'bot',
     },
   ]);
   const [input, setInput] = useState('');
   const messagesEndRef = useRef(null);
 
-  // Función para desplazar hacia abajo
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Desplazar hacia abajo cada vez que se actualicen los mensajes
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
@@ -34,7 +32,7 @@ function Chat() {
         {
           role: 'system',
           content:
-            'Eres Savida, un coach personal basado en inteligencia artificial que ayuda a los usuarios a mejorar su vida diaria y laboral. Responde siempre de manera amigable, motivadora y estructurada.',
+            'Eres Savida, un coach personal basado en inteligencia artificial. Responde usando formato Markdown para negritas, listas y otros formatos.',
         },
         ...newMessages.map((msg) => ({
           role: msg.sender === 'user' ? 'user' : 'assistant',
