@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f2f5;
+  background-color: #B8D8EB; /* Fondo claro, moderno */
 }
 
 .chat-container {
@@ -19,10 +19,10 @@ body {
 .chat-logo {
   text-align: center;
   font-size: 2rem;
-  color: #4caf50;
+  color: #003366; /* Azul oscuro para el logo */
   margin: 20px 0;
+  font-weight: bold;
 }
-
 
 .message {
   display: flex;
@@ -45,6 +45,7 @@ body {
   flex-direction: column;
   gap: 10px;
   scroll-behavior: smooth; /* Transición suave al hacer scroll */
+  background-color: #B8D8EB; /* Fondo del área de mensajes */
 }
 
 @keyframes fadeIn {
@@ -55,30 +56,33 @@ body {
 }
 
 .message.user {
-  background-color: #e1f5fe;
+  background-color: #00A0DF; /* Azul brillante para los mensajes del usuario */
+  color: #ffffff; /* Texto blanco para contraste */
   align-self: flex-end;
 }
 
 .message.bot {
-  background-color: #f1f1f1;
+  background-color: #003366; /* Azul oscuro para los mensajes del bot */
+  color: #ffffff; /* Texto blanco para contraste */
   align-self: flex-start;
 }
 
 .message-icon {
   font-size: 24px;
+  color: #ffffff; /* Íconos en blanco */
 }
 
 .input-area {
   display: flex;
   padding: 10px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #00A0DF; /* Línea divisoria azul brillante */
   background-color: #ffffff;
 }
 
 .input-area input {
   flex: 1;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #003366; /* Borde azul oscuro */
   border-radius: 6px;
   font-size: 16px;
 }
@@ -86,7 +90,7 @@ body {
 .input-area button {
   margin-left: 10px;
   padding: 10px 20px;
-  background-color: #4caf50;
+  background-color: #003366; /* Azul oscuro */
   color: white;
   border: none;
   border-radius: 6px;
@@ -94,5 +98,5 @@ body {
 }
 
 .input-area button:hover {
-  background-color: #388e3c;
+  background-color: #00A0DF; /* Azul brillante en hover */
 }
