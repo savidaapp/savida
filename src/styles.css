@@ -16,13 +16,6 @@ body {
   overflow: hidden;
 }
 
-.logo {
-  text-align: center;
-  font-size: 2rem;
-  color: #4caf50;
-  margin: 20px 0;
-}
-
 .messages {
   flex: 1;
   overflow-y: auto;

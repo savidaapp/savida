@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Message from './Message';
-import { VscRobot } from 'react-icons/vsc';
+import { FaRobot, FaUser } from 'react-icons/fa';
 
 function Chat() {
   const [messages, setMessages] = useState([
@@ -73,7 +73,6 @@ function Chat() {
 
   return (
     <div className="chat-container">
-      <h1 className="logo">Savida</h1>
       <div className="messages">
         {messages.map((msg, index) => (
           <Message key={index} text={msg.text} sender={msg.sender} />
