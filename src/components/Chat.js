@@ -74,7 +74,7 @@ function Chat() {
 
   return (
     <div className="chat-container">
-      
+      <h1 className="chat-logo">savida</h1> {/* Título centrado */}
       <div className="messages">
         {messages.map((msg, index) => (
           <Message key={index} text={msg.text} sender={msg.sender} />
