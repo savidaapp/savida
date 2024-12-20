@@ -1,14 +1,14 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #B8D8EB; /* Fondo claro, moderno */
+  background-color: #F9FAFB; /* Fondo general gris claro */
 }
 
 .chat-container {
   max-width: 600px;
   height: 80vh;
   margin: 20px auto;
-  background-color: #ffffff;
+  background-color: #FFFFFF; /* Fondo blanco para el chat */
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -30,7 +30,7 @@ body {
   gap: 10px;
   padding: 12px;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra sutil */
   opacity: 0;
   transform: translateY(10px);
   animation: fadeIn 0.3s forwards;
@@ -45,7 +45,7 @@ body {
   flex-direction: column;
   gap: 10px;
   scroll-behavior: smooth; /* Transición suave al hacer scroll */
-  background-color: #B8D8EB; /* Fondo del área de mensajes */
+  background-color: #F9FAFB; /* Fondo gris claro */
 }
 
 @keyframes fadeIn {
@@ -56,41 +56,42 @@ body {
 }
 
 .message.user {
-  background-color: #00A0DF; /* Azul brillante para los mensajes del usuario */
-  color: #ffffff; /* Texto blanco para contraste */
+  background-color: #E8F0F7; /* Azul claro muy tenue */
+  color: #000000; /* Texto negro */
   align-self: flex-end;
 }
 
 .message.bot {
-  background-color: #003366; /* Azul oscuro para los mensajes del bot */
-  color: #ffffff; /* Texto blanco para contraste */
+  background-color: #F1F3F4; /* Gris claro */
+  color: #000000; /* Texto negro */
   align-self: flex-start;
 }
 
 .message-icon {
   font-size: 24px;
-  color: #ffffff; /* Íconos en blanco */
+  color: #00A0DF; /* Azul brillante para los íconos */
 }
 
 .input-area {
   display: flex;
   padding: 10px;
-  border-top: 1px solid #00A0DF; /* Línea divisoria azul brillante */
-  background-color: #ffffff;
+  border-top: 1px solid #E0E0E0; /* Línea divisoria gris claro */
+  background-color: #FFFFFF;
 }
 
 .input-area input {
   flex: 1;
   padding: 10px;
-  border: 1px solid #003366; /* Borde azul oscuro */
+  border: 1px solid #D0D0D0; /* Borde gris claro */
   border-radius: 6px;
   font-size: 16px;
+  color: #000000; /* Texto negro */
 }
 
 .input-area button {
   margin-left: 10px;
   padding: 10px 20px;
-  background-color: #003366; /* Azul oscuro */
+  background-color: #00A0DF; /* Azul brillante */
   color: white;
   border: none;
   border-radius: 6px;
@@ -98,5 +99,5 @@ body {
 }
 
 .input-area button:hover {
-  background-color: #00A0DF; /* Azul brillante en hover */
+  background-color: #008CBA; /* Azul un poco más oscuro al hover */
 }
