@@ -26,7 +26,7 @@ body {
 
 .message {
   display: flex;
-  align-items: flex-start; /* Alinea el ícono con la primera línea */
+  align-items: flex-start; /* Alinea el ícono con la primera línea del texto */
   gap: 10px;
   padding: 12px;
   border-radius: 10px;
@@ -51,17 +51,16 @@ body {
 }
 
 .message-icon {
-  font-size: 24px;
+  font-size: 24px; /* Tamaño del ícono */
   color: #00A0DF; /* Azul brillante para los íconos */
   flex-shrink: 0; /* Mantiene el tamaño del ícono constante */
-  line-height: 1; /* Alinea verticalmente con la línea de texto */
-  display: flex;
-  align-items: center; /* Garantiza que el ícono esté centrado en altura */
+  display: inline-block; /* Se alinea junto al texto */
+  vertical-align: top; /* Alinea el ícono con la parte superior del texto */
 }
 
 .message-content {
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.5; /* Ajusta la altura de línea para mayor legibilidad */
   word-wrap: break-word;
   flex: 1; /* El texto ocupa el espacio restante */
 }
