@@ -1,8 +1,7 @@
-// Mejoras en Chat.js
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Message from './Message';
-import ReactMarkdown from 'react-markdown';
+import { FaRobot, FaUser } from 'react-icons/fa';
 
 function Chat() {
   const [messages, setMessages] = useState([
@@ -12,7 +11,6 @@ function Chat() {
     },
   ]);
   const [input, setInput] = useState('');
-
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -69,7 +67,7 @@ function Chat() {
         },
       ]);
     } finally {
-      scrollToBottom(); // Asegurar el auto scroll siempre después de enviar
+      scrollToBottom();
     }
   };
 
@@ -77,13 +75,7 @@ function Chat() {
     <div className="chat-container">
       <div className="messages">
         {messages.map((msg, index) => (
-          <div
-            key={index}
-            className={`message ${msg.sender}`}
-          >
-            <div className="sender-label">{msg.sender === 'user' ? 'Tú' : 'Savida'}</div>
-            <ReactMarkdown>{msg.text}</ReactMarkdown>
-          </div>
+          <Message key={index} text={msg.text} sender={msg.sender} />
         ))}
         <div ref={messagesEndRef} />
       </div>
