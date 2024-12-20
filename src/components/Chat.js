@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Message from './Message';
-import { FaPaperPlane } from 'react-icons/fa'; // Importar el ícono para el botón
+import MenuToggle from './MenuToggle'; // Importa el menú toggle
+import { FaPaperPlane } from 'react-icons/fa';
 
 function Chat() {
   const [messages, setMessages] = useState([
@@ -73,6 +74,7 @@ function Chat() {
 
   return (
     <div className="chat-container">
+      <MenuToggle /> {/* Menú agregado */}
       <h1 className="chat-logo">Savida</h1>
       <div className="messages">
         {messages.map((msg, index) => (
@@ -89,7 +91,7 @@ function Chat() {
           onKeyDown={(e) => (e.key === 'Enter' ? handleSend() : null)}
         />
         <button onClick={handleSend}>
-          <FaPaperPlane /> {/* Ícono dentro del botón */}
+          <FaPaperPlane />
         </button>
       </div>
     </div>
