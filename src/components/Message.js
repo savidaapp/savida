@@ -1,13 +1,12 @@
 import React from 'react';
-import { FaUser } from 'react-icons/fa';
-import { VscRobot } from 'react-icons/vsc';
+import { MdOutlineBubbleChart } from "react-icons/md";
 import ReactMarkdown from 'react-markdown';
 
 function Message({ text, sender }) {
   return (
     <div className={`message ${sender}`}>
       <div className="message-icon">
-        {sender === 'user' ? <FaUser /> : <VscRobot />}
+        {sender === 'user' ? <FaUser /> : <MdOutlineBubbleChart />}
       </div>
       <div className="message-content">
         <ReactMarkdown>{text}</ReactMarkdown>

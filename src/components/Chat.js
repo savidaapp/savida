@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Message from './Message';
+import { FaPaperPlane } from 'react-icons/fa'; // Importar el ícono para el botón
 
 function Chat() {
   const [messages, setMessages] = useState([
@@ -85,9 +86,11 @@ function Chat() {
           placeholder="Escribe tu mensaje..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => (e.key === 'Enter' ? handleSend() : null)}
+          onKeyDown={(e) => (e.key === 'Enviar' ? handleSend() : null)}
         />
-        <button onClick={handleSend}>Enviar</button>
+        <button onClick={handleSend}>
+          <FaPaperPlane /> {/* Ícono dentro del botón */}
+        </button>
       </div>
     </div>
   );
