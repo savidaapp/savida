@@ -26,7 +26,7 @@ body {
 
 .message {
   display: flex;
-  align-items: flex-start; /* Alinea los elementos en la parte superior */
+  align-items: flex-start; /* Alinea el ícono con la primera línea */
   gap: 10px;
   padding: 12px;
   border-radius: 10px;
@@ -54,7 +54,9 @@ body {
   font-size: 24px;
   color: #00A0DF; /* Azul brillante para los íconos */
   flex-shrink: 0; /* Mantiene el tamaño del ícono constante */
-  margin-top: 4px; /* Alinea el ícono con la primera línea del texto */
+  line-height: 1; /* Alinea verticalmente con la línea de texto */
+  display: flex;
+  align-items: center; /* Garantiza que el ícono esté centrado en altura */
 }
 
 .message-content {
