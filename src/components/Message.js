@@ -1,5 +1,7 @@
 import React from 'react';
-import {VscRobot, FaUser } from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa';
+import { VscRobot } from "react-icons/vsc";
+
 
 function Message({ text, sender }) {
   return (
