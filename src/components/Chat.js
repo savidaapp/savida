@@ -86,7 +86,7 @@ function Chat() {
           placeholder="Escribe tu mensaje..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => (e.key === 'Enviar' ? handleSend() : null)}
+          onKeyDown={(e) => (e.key === 'Enter' ? handleSend() : null)}
         />
         <button onClick={handleSend}>
           <FaPaperPlane /> {/* Ícono dentro del botón */}
