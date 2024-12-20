@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Message from './Message';
-import { FaUser } from 'react-icons/fa';
-import { VscRobot } from "react-icons/vsc";
 
 function Chat() {
   const [messages, setMessages] = useState([
@@ -14,10 +12,12 @@ function Chat() {
   const [input, setInput] = useState('');
   const messagesEndRef = useRef(null);
 
+  // Función para desplazar hacia abajo
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Desplazar hacia abajo cada vez que se actualicen los mensajes
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
@@ -74,7 +74,7 @@ function Chat() {
 
   return (
     <div className="chat-container">
-      <h1 className="chat-logo">savida</h1> {/* Título centrado */}
+      <h1 className="chat-logo">savida</h1>
       <div className="messages">
         {messages.map((msg, index) => (
           <Message key={index} text={msg.text} sender={msg.sender} />
@@ -93,7 +93,6 @@ function Chat() {
       </div>
     </div>
   );
-  
 }
 
 export default Chat;

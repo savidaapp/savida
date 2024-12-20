@@ -36,13 +36,8 @@ body {
   animation: fadeIn 0.3s forwards;
 }
 
-.message {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Contenedor de mensajes con scroll vertical */
+.messages {
   flex: 1;
   overflow-y: auto; /* Habilita el scroll vertical */
   padding: 15px;
