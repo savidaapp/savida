@@ -5,7 +5,7 @@ import Message from './Message';
 function Chat() {
   const [messages, setMessages] = useState([
     {
-      text: '¡Hola! Soy **Savida**, tu coach personal. ¿En qué área te gustaría mejorar hoy?\n\n1. Salud\n2. Productividad\n3. Relación laboral',
+      text: '¡Hola! Soy **Savida**, tu coach personal. ¿En qué área te gustaría mejorar hoy?\n\n1. Salud\n2. Productividad\n3. Relaciones laborales',
       sender: 'bot',
     },
   ]);
@@ -72,7 +72,7 @@ function Chat() {
 
   return (
     <div className="chat-container">
-      <h1 className="chat-logo">savida</h1>
+      <h1 className="chat-logo">Savida</h1>
       <div className="messages">
         {messages.map((msg, index) => (
           <Message key={index} text={msg.text} sender={msg.sender} />
