@@ -9,7 +9,6 @@ function Message({ text, sender }) {
       <div className="message-icon">
         {sender === 'user' ? <FaUser /> : <VscRobot />}
       </div>
-      {/* Renderizar texto con formato Markdown */}
       <div className="message-content">
         <ReactMarkdown>{text}</ReactMarkdown>
       </div>
