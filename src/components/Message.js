@@ -5,7 +5,7 @@ function Message({ text, sender }) {
   return (
     <div className={`message ${sender}`}>
       <div className="message-icon">
-        {sender === 'user' ? <FaUser /> : <FaRobot />}
+        {sender === 'user' ? <FaUser /> : <VscRobot />}
       </div>
       <p>{text}</p>
     </div>
