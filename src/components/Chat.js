@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Message from './Message';
-import MenuToggle from './MenuToggle'; // Importa el menú toggle
+import MenuToggle from './MenuToggle'; // Importar el menú toggle
 import { FaPaperPlane } from 'react-icons/fa';
 
 function Chat() {
