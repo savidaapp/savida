@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaRobot, FaUser } from 'react-icons/fa';
+import {VscRobot, FaUser } from 'react-icons/fa';
 
 function Message({ text, sender }) {
   return (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Message from './Message';
-import { VscRobot, FaUser } from 'react-icons/fa';
+import {VscRobot, FaUser } from 'react-icons/fa';
 
 function Chat() {
   const [messages, setMessages] = useState([
